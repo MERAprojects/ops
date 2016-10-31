@@ -19,7 +19,7 @@ from smart.util import pexpect
 
 from time import sleep
 import pytest
-
+from pytest import mark
 from opsvsi.docker import *
 from opsvsi.opsvsitest import *
 
@@ -339,7 +339,7 @@ class aaaFeatureTest(OpsVsiTest):
             p.kill(0)
             assert loginpass != 1, "Failed to validate radius authetication" \
                                    " when server is not reachable"
-
+@mark.skipif(True, reason="Disabling as AAA feature revamp in progress")
 class Test_aaafeature:
     def setup(self):
         pass
@@ -365,12 +365,15 @@ class Test_aaafeature:
     def __del__(self):
         del self.test
 
+    @pytest.mark.skipif(True, reason="Disabling as AAA feature revamp in progress")
     def test_loginSSHlocal(self):
         self.test.loginSSHlocal()
 
+    @pytest.mark.skipif(True, reason="Disabling as AAA feature revamp in progress")
     def test_loginSSHradius(self):
         self.test.loginSSHradius()
         self.test.loginSSHradius(chap=True)
 
+    @pytest.mark.skipif(True, reason="Disabling as AAA feature revamp in progress")
     def test_loginSSHradiusWithFallback(self):
         self.test.loginSSHradiusWithFallback()
