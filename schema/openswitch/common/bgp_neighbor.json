@@ -387,6 +387,42 @@
           ],
           "group": "/Neighbor Configuration"
         },
+        "negotiated_timers": {
+          "category": "status",
+          "type": {
+            "valueType": "integer",
+            "valueMap": {
+              "holdtime": {
+                "type": {
+                  "type": "integer",
+                  "minInteger": 0,
+                  "maxInteger": 65535
+                },
+                "doc": [
+                  "Per-BGP neighbor negotiated holdtime interval"
+                ],
+                "group": "/Status"
+              },
+              "keepalive": {
+                "type": {
+                  "type": "integer",
+                  "minInteger": 0,
+                  "maxInteger": 65535
+                },
+                "doc": [
+                  "Per-BGP neighbor negotiated keepalive interval"
+                ],
+                "group": "/Status"
+              }
+            },
+            "min": 0,
+            "max": 2
+          },
+          "doc": [
+            "BGP per neighbor negotiated timers - Connect timer/Keep-alive Interval."
+          ],
+          "group": "/Status"
+        },
         "statistics": {
           "category": "statistics",
           "type": {
