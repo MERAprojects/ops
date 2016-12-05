@@ -112,6 +112,9 @@
     "BGP_Neighbor": {
       "$ref": "common/bgp_neighbor.json#/tables/BGP_Neighbor"
     },
+    "BGP_Neighbor_AF": {
+      "$ref": "common/bgp_neighbor.json#/tables/BGP_Neighbor_AF"
+    },
     "Recursive_Nexthop": {
       "$ref": "common/recursive_nexthop.json#/tables/Recursive_Nexthop"
     },
