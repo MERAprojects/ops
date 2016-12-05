@@ -746,6 +746,21 @@
           ],
           "group": "/Neighbor Configuration"
         },
+        "next_hop_self": {
+          "category": "configuration",
+          "type": {
+            "key": {
+              "type": "boolean"
+            },
+            "min": 0,
+            "max": 1
+          },
+          "doc": [
+            "Disable the next hop calculation for this neighbor."
+          ],
+          "group": "/Neighbor Configuration",
+          "emptyValue": false
+        },
         "other_config": {
           "category": "configuration",
           "type": {
