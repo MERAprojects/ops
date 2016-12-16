@@ -4,6 +4,29 @@
   "name": "OpenSwitch",
   "version": "0.1.8",
   "tables": {
+    "BGP_Neighbor_AF": {
+      "columns": {
+        "next_hop_self": {
+          "category": "configuration",
+          "type": {
+            "key": {
+              "type": "boolean"
+            },
+            "min": 0,
+            "max": 1
+          },
+          "doc": [
+            "Disable the next hop calculation for this neighbor."
+          ],
+          "group": "/Neighbor Configuration",
+          "emptyValue": false
+        }
+      },
+      "title": "BGP Neighbors AF parameters",
+      "doc": [
+        "This table holds both BGP neighbors and BGP peer groups AF specific parameters."
+      ]
+    },
     "BGP_Neighbor": {
       "columns": {
         "is_peer_group": {
@@ -765,6 +788,33 @@
             "max": "unlimited"
           },
           "group": "/Common Columns"
+        },
+        "address_families": {
+          "category": "configuration",
+          "relationship": "1:m",
+          "type": {
+            "key": {
+              "type": "string",
+              "enum": [
+                "default",
+                "vpn4_unicast",
+                "ipv4_unicast",
+                "ipv4_multicast",
+                "ipv6_unicast",
+                "ipv6_multicast"
+              ]
+            },
+            "value": {
+              "type": "uuid",
+              "refTable": "BGP_Neighbor_AF"
+            },
+            "min": 0,
+            "max": "unlimited"
+          },
+          "doc": [
+            "BGP neighbors address family specific parameters."
+          ],
+          "group": "/Configuration"
         }
       },
       "title": "BGP Neighbors and Peer Groups",
