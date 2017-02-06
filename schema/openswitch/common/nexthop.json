@@ -58,6 +58,26 @@
           "group": "/Configuration",
           "emptyValue": "unicast"
         },
+        "flag": {
+          "category": "configuration",
+          "type": {
+              "key": {
+                "type": "string",
+                "enum": [
+                  "blackhole",
+                  "reject"
+                ]
+              },
+              "min": 0,
+              "max": 1
+          },
+          "doc": [
+            "Indicates that this is special type of nexthop. The value is <code>reject</code>",
+            "if this is a reject nexthop, <code>blackhole</code> if this is a blackhole nexthop"
+          ],
+          "group": "/Configuration",
+          "emptyValue": ""
+        },
         "selected": {
           "category": "status",
           "type": {
