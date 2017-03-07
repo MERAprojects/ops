@@ -717,6 +717,9 @@ enum ovsrec_port_forwarding_state_proto_e {
 #define OVSDB_BGP_NEIGHBOR_CLEAR_COUNTERS_SOFT_OUT_REQUESTED   "bgp_num_clear_counters_peer_soft_out_requested"
 #define OVSDB_BGP_NEIGHBOR_CLEAR_COUNTERS_SOFT_IN_PERFORMED    "bgp_num_clear_counters_peer_soft_in_performed"
 #define OVSDB_BGP_NEIGHBOR_CLEAR_COUNTERS_SOFT_IN_REQUESTED    "bgp_num_clear_counters_peer_soft_in_requested"
+#define OVSDB_BGP_NEIGHBOR_CLEAR_COUNTERS_HARD_PERFORMED   "bgp_num_clear_counters_peer_hard_performed"
+#define OVSDB_BGP_NEIGHBOR_CLEAR_COUNTERS_HARD_REQUESTED   "bgp_num_clear_counters_peer_hard_requested"
+
 
 /* BGP Neighbor state, goes into "status" column */
 #define BGP_PEER_STATE                          "bgp_peer_state"
