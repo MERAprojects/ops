@@ -280,13 +280,9 @@ def sendCommand(dut,cmd):
     buffer=retStruct.get("buffer")
     assert retStruct.get("returnCode") == 0,\
         "There are problems with command execution. Check output below:\n" + buffer
-    # assert not("% Unable" in buffer),\
-    #     "Command is not executed because :\n"+buffer
     LogOutput("info","Output command: \"" +cmd+"\" is:\n "+buffer)
     return True
 
-# syntax
-# access-list ip <acl-name>
 def createAccessList(**kwargs):
     device=kwargs.get("device")
     accessListName=kwargs.get("name")
@@ -297,21 +293,6 @@ def createAccessList(**kwargs):
         resultBoolean = False
     return resultBoolean
 
-# syntax
-# [<sequence-number>]
-#          {permit|deny}
-#          {any|ah|gre|esp|icmp|igmp|pim|<ip-protocol-num>}
-#          {any|<src-ip-address>[/{<prefix-length>|<subnet-mask>}]}
-#          {any|<dst-ip-address>[/{<prefix-length>|<subnet-mask>}]}
-#          [count] [log]
-#     [no] [<sequence-number>]
-#          {permit|deny}
-#          {sctp|tcp|udp}
-#          {any|<src-ip-address>[/{<prefix-length>|<subnet-mask>}]}
-#          [{eq|gt|lt|neq} <port>|range <min-port> <max-port>]
-#          {any|<dst-ip-address>[/{<prefix-length>|<subnet-mask>}]}
-#          [{eq|gt|lt|neq} <port>|range <min-port> <max-port>]
-#          [count] [log]
 def createRuleAccessList(**kwargs):
 # TO DO: add checking you are in access list configuration mode (switch(config-acl)# )
     device=kwargs.get("device")                    # deviceObj
